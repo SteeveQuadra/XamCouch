@@ -1,0 +1,34 @@
+{
+    "databases": 	
+	{
+	
+		"travel-sample": 
+		{
+			"log": ["*"],
+			"server": "http://localhost:8091",
+			"bucket": "travel-sample",
+			"username": "Gateway",
+			"password": "production",
+			"users": 
+			{
+				"Gateway": 
+				{
+					"disabled": false, 
+					"admin_channels": ["*"], 
+					"password":"production", 
+					"name":"Gateway"
+				}
+			},
+			"enable_shared_bucket_access": true,
+            "import_docs": "continuous",
+			"unsupported": {
+				"replicator_2": true
+			  },
+			"sync": `function (doc, oldDoc) {
+				if (doc.sdk) {
+					channel(doc.sdk);
+				}
+			}`
+		}
+    }
+}
