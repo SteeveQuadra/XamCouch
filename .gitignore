@@ -1,0 +1,8 @@
+/.vs/*
+/XamNetCore/XamNetCore.Android/bin/*
+/XamNetCore/XamNetCore.Android/obj/*
+/XamNetCore/XamNetCore.UWP/bin/*
+/XamNetCore/XamNetCore.UWP/obj/*
+/XamNetCore/XamNetCore.iOS/bin/*
+/XamNetCore/XamNetCore.iOS/obj/*
+/packages/*

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamNetCore"
+             x:Class="XamNetCore.MainPage">
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50" />
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Grid.Row="0" Grid.Column="0" x:Name="btnUpdate" Text="Update" Clicked="btnUpdate_Clicked"/>
+			<ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding ListLog}" x:Name="lstLog" BackgroundColor="Yellow" HasUnevenRows="True">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding Country}" TextColor="Black"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Button Grid.Row="2" Grid.Column="0"  x:Name="btnGet" Text="Read datas" Clicked="BtnGet_Clicked"/>
+			<ListView Grid.Row="3" Grid.Column="0" ItemsSource="{Binding ListAirlines}" x:Name="lstAirlines" BackgroundColor="Green" HasUnevenRows="True">
+				<ListView.ItemTemplate>
+					<DataTemplate >
+						<TextCell x:Name="txt1" Text="{Binding Infos}" TextColor="Black"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Entry Grid.Row="0" Grid.Column="1" Text="{Binding NewAirline.Id}" x:Name="txtId" />
+			<Entry Grid.Row="1" Grid.Column="1" Text="{Binding NewAirline.Country}" x:Name="txtCountry" />
+			<Entry Grid.Row="2" Grid.Column="1" Text="{Binding NewAirline.Name}" x:Name="txtName" />
+			<Button Grid.Row="3" Grid.Column="1"  x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
